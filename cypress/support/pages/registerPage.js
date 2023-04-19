@@ -5,7 +5,6 @@ export class RegisterPage{
     }
 
  clickRegisterToggle(){
-
     cy.get(this.spanRegisterToggle).dblclick()
  }
 }

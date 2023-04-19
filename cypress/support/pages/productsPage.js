@@ -1,18 +1,15 @@
 export class ProductsPage{
  
     
-    constructor(){
-      
+    constructor(){      
       this.closeButton = '#closeModal';
       this.shoppingcartButton = '#goShoppingCart'
     }
 
    
 addProducts(product){
-
   cy.get(`button[value="${product}"]`).click()
   cy.get(this.closeButton).click()
-  
 };
 
 clickShoppingCartButton(){

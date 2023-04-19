@@ -6,7 +6,6 @@ export class HeadPage{
     }
 
 checkUserPushingit(){
-
     cy.xpath(this.h2UserPushingit)
 }
 }

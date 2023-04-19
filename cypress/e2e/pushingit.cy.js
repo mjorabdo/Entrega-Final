@@ -1,6 +1,5 @@
 /// <reference types='cypress'/>
 
-
 // importar las clases
 
 import { RegisterPage } from "../support/pages/registerPage";
@@ -16,10 +15,8 @@ describe('Pre-entrega', ()=>{
     let data
 
     //Const timeout
-
     const timeout = 10000;
    
-
     // Const de las clases
     const registerPage = new RegisterPage;
     const loginPage = new LoginPage;
@@ -27,8 +24,6 @@ describe('Pre-entrega', ()=>{
     const homePage = new HomePage;
     const productsPage = new ProductsPage;
     const shoppingcartPage = new ShoppingcartPage;
-
-
 
   before('before', ()=>{
     
@@ -39,13 +34,11 @@ describe('Pre-entrega', ()=>{
 
   })
 
-
-   beforeEach('beforeEach', ()=>{
+  beforeEach('beforeEach', ()=>{
 
     cy.visit('');
 
   });
-
 
   it('tests', ()=>{
 
