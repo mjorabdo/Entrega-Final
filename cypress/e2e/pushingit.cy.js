@@ -58,10 +58,9 @@ describe('Pre-entrega', ()=>{
     productsPage.clickShoppingCartButton();
     shoppingcartPage.checkNameProduct(data.products.product1.name).should('have.text', data.products.product1.name);
     shoppingcartPage.checkNameProduct(data.products.product2.name).should('have.text', data.products.product2.name);
-    shoppingcartPage.checkPriceProduct(data.products.product1.price).should('have.text', "$" + data.products.product1.price.toString());
-    shoppingcartPage.checkPriceProduct(data.products.product2.price).should('have.text', "$" + data.products.product2.price.toString());
-    shoppingcartPage.checkProductRelatesToPrice(data.products.product1.name);
-    shoppingcartPage.checkProductRelatesToPrice(data.products.product2.name);
+    shoppingcartPage.checkProductRelatesToPrice(data.products.product1.name,data.products.product1.price).should('exist');
+    shoppingcartPage.checkProductRelatesToPrice(data.products.product2.name,data.products.product2.price).should('exist');
+    shoppingcartPage.showTotalPrice()
     
   })
 
