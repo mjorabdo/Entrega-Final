@@ -60,8 +60,8 @@ describe('Pre-entrega', ()=>{
     productsPage.clickShoppingCartButton();
     shoppingcartPage.checkNameProduct(data.products.product1.name).should('have.text', data.products.product1.name);
     shoppingcartPage.checkNameProduct(data.products.product2.name).should('have.text', data.products.product2.name);
-    shoppingcartPage.checkProductRelatesToPrice(data.products.product1.name);
-    shoppingcartPage.checkProductRelatesToPrice(data.products.product2.name);   
+    shoppingcartPage.checkProductRelatesToPrice(data.products.product1.name).should('have.text', '$' + data.products.product1.price)
+    shoppingcartPage.checkProductRelatesToPrice(data.products.product2.name).should('have.text', '$' + data.products.product2.price);   
     shoppingcartPage.showTotalPrice();
     shoppingcartPage.sumPriceProducts().should('have.text', data.products.product1.price + data.products.product2.price)
     
