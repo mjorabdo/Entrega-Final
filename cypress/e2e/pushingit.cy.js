@@ -28,6 +28,8 @@ describe('Pre-entrega', ()=>{
     const productsPage = new ProductsPage;
     const shoppingcartPage = new ShoppingcartPage;
 
+
+
   before('before', ()=>{
     
     // Datos del fixture
@@ -58,9 +60,11 @@ describe('Pre-entrega', ()=>{
     productsPage.clickShoppingCartButton();
     shoppingcartPage.checkNameProduct(data.products.product1.name).should('have.text', data.products.product1.name);
     shoppingcartPage.checkNameProduct(data.products.product2.name).should('have.text', data.products.product2.name);
-    shoppingcartPage.checkProductRelatesToPrice(data.products.product1.name,data.products.product1.price).should('exist');
-    shoppingcartPage.checkProductRelatesToPrice(data.products.product2.name,data.products.product2.price).should('exist');
-    shoppingcartPage.showTotalPrice()
+    shoppingcartPage.checkProductRelatesToPrice(data.products.product1.name);
+    shoppingcartPage.checkProductRelatesToPrice(data.products.product2.name);   
+    shoppingcartPage.showTotalPrice();
+    shoppingcartPage.sumPriceProducts().should('have.text', data.products.product1.price + data.products.product2.price)
+    
     
   })
 

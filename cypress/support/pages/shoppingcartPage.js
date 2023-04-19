@@ -1,8 +1,11 @@
+
+
 export class ShoppingcartPage{
  
 constructor(){
 
-  this.buttonShowTotalPrice = '.chakra-button.css-15tuzzq'
+  this.buttonShowTotalPrice = '.chakra-button.css-15tuzzq';
+  this.totalPrice = '#price'
 }
 checkNameProduct(product){
   
@@ -13,13 +16,22 @@ checkNameProduct(product){
 
 checkProductRelatesToPrice(product){
  
- return cy.contains(product).siblings('#productPrice')
+  
+   return cy.get(`[name='${product}']`).siblings('#productPrice')
 };
 
 showTotalPrice(){
 
   cy.get(this.buttonShowTotalPrice).click();
   
+}
+
+sumPriceProducts(){
+
+
+  
+  return cy.get(this.totalPrice)
+    
 }
 
 
