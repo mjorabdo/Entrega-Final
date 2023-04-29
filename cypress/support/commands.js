@@ -23,3 +23,51 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+
+
+Cypress.Commands.add('register', ()=>{
+
+cy.request({
+    url:"https://pushing-it.onrender.com/api/register",
+    method: "POST",
+    body:{
+
+        username : "pushingit",
+        password: "123456!",
+        gender: "Female",
+        day: "9",
+        month: "November",
+        year: "1991"
+    }
+}).then(respuesta =>{
+    expect(respuesta.status).to.be.equal(200)
+})
+});
+
+Cypress.Commands.add('login', (user, password) =>{
+
+    cy.request({
+        url:'https://pushing-it.onrender.com/api/login',
+        method: "POST",
+        body:{
+            "username" : user,
+            "password": password
+        }
+    })
+    .then(respuesta =>{
+        expect(respuesta.status).to.be.equal(200)
+        window.localStorage.setItem('token', respuesta.body.token)
+        window.localStorage.setItem('user', respuesta.body.user.username)
+    })
+});
+
+Cypress.Commands.add('delete', (user) =>{
+    cy.request({
+        url:"https://pushing-it.onrender.com/api/deleteuser/" + user,
+        method:"DELETE"
+    }).then(respuesta =>{
+    expect(respuesta.status).to.be.equal(200)
+})
+})

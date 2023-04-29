@@ -1,8 +1,5 @@
 {
-    "user":{
-        "user": "pushingit",
-        "password":"123456!"
-    },
+    
     "products":{
         "product1":{
             "name":"Black Jacket",
@@ -13,5 +10,12 @@
             "name":"Beige Shorts",
             "price": 19
         }
+    },
+
+    "checkout":{
+        "firstName": "Jorgelina",
+        "lastName": "Abdo",
+        "cardNumber":"1234567891234567"
+
     }
     }
